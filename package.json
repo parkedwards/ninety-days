@@ -28,6 +28,9 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-preset-stage-1": "^6.1.18",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
     "lodash": "^3.10.1",
     "react": "^0.14.8",
     "react-bootstrap": "^0.30.7",
