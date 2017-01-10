@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+
+import moment from 'moment';
 
 // you can import Action Creators here ----
 
@@ -23,7 +26,8 @@ class FeedIndex extends Component {
     event.preventDefault();
     this.setState({
       activeTab: eventKey
-    })
+    });
+
   }
 
   render() {
@@ -31,11 +35,13 @@ class FeedIndex extends Component {
       <div>
 
         <Nav bsStyle="tabs" activeKey={this.state.activeTab} onSelect={this.tabSelect.bind(this)}>
-          <NavItem eventKey="1" title="Item">Checklist</NavItem>
-          <NavItem eventKey="2" title="Item">Weight Log</NavItem>
-          <NavItem eventKey="3" title="Item">Meal Log</NavItem>
-          <NavItem eventKey="4" title="Item">Macro Log</NavItem>
+          <LinkContainer to="/feed/checklist"><NavItem eventKey="1" title="Checklist">Checklist</NavItem></LinkContainer>
+          <LinkContainer to="/feed/weightlog"><NavItem eventKey="2" title="Weight Log">Weight Log</NavItem></LinkContainer>
+          <LinkContainer to="/feed/meallog"><NavItem eventKey="3" title="Meal Log">Meal Log</NavItem></LinkContainer>
+          <LinkContainer to="/feed/macrolog"><NavItem eventKey="4" title="Macro Log">Macro Log</NavItem></LinkContainer>
         </Nav>
+        
+        { this.props.children }
 
       </div>
     );
