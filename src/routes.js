@@ -16,10 +16,10 @@ export default (
     <IndexRoute component={Start} />
     <Route path="login" component={Login} />
     <Route path="feed" component={FeedIndex}>
-      <Route path="/checklist" component={FeedChecklist} />
-      <Route path="/weight" component={FeedWeight} />
-      <Route path="/meal" component={FeedMeal} />
-      <Route path="/macro" component={FeedMacro} />
+      <Route path="checklist" component={FeedChecklist} />
+      <Route path="weight" component={FeedWeight} />
+      <Route path="meal" component={FeedMeal} />
+      <Route path="macro" component={FeedMacro} />
     </Route>  
   </Route> 
 );
