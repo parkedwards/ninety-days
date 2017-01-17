@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { DropdownButton, MenuItem } from 'react-bootstrap';
+import { DropdownButton, MenuItem, Fade } from 'react-bootstrap';
 import moment from 'moment';
 
 // things you need to input on a daily basis:
@@ -11,18 +11,31 @@ import moment from 'moment';
 // Snacks (unlimited)
 
 class FeedChecklist extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
-    <div>
-      <h2>Hello, Edward!</h2>
-      <p>The date is <span>{moment().format("MMM Do, YYYY")}</span></p>
+      <div>
+        <h2>Hello, Edward!</h2>
+        <p>The date is <span>{moment().format("MMM Do, YYYY")}</span></p>
 
-      <DropdownButton bsStyle={"info"} title={"Let's Go!"} id={`dropdown-basic`}>
-        <MenuItem onClick={()=>console.log('heyo!')}>Weight</MenuItem>
-        <MenuItem onClick={()=>console.log('booga!')}>Meal</MenuItem>
-      </DropdownButton>  
+        <DropdownButton bsStyle={"info"} title={"Let's Go!"} id={`dropdown-basic`}>
+          <MenuItem onClick={() => this.setState({ weight: !this.state.weight })}>Weight</MenuItem>
+          <MenuItem onClick={() => this.setState({ meal: !this.state.meal })}>Meal</MenuItem>
+        </DropdownButton>
 
-    </div>
+        <Fade in={this.state.weight}>
+          <div>Weight input!</div>
+        </Fade>  
+
+        <Fade in={this.state.meal}>
+          <div>Meal input!</div>
+        </Fade>  
+
+      </div>
     );
   }
 }
