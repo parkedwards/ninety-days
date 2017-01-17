@@ -15,28 +15,17 @@ import { LinkContainer } from 'react-router-bootstrap';
 class FeedIndex extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      activeTab: "1"
-    }
-  }
-
-  tabSelect(eventKey) {
-    event.preventDefault();
-    this.setState({
-      activeTab: eventKey
-    });
-
   }
 
   render() {
     return (
       <div>
 
-        <Nav bsStyle="tabs" activeKey={this.state.activeTab} onSelect={this.tabSelect.bind(this)}>
-          <LinkContainer to="/feed/checklist"><NavItem eventKey="1" title="Checklist">Checklist</NavItem></LinkContainer>
-          <LinkContainer to="/feed/weight"><NavItem eventKey="2" title="Weight Log">Weight Log</NavItem></LinkContainer>
-          <LinkContainer to="/feed/meal"><NavItem eventKey="3" title="Meal Log">Meal Log</NavItem></LinkContainer>
-          <LinkContainer to="/feed/macro"><NavItem eventKey="4" title="Macro Log">Macro Log</NavItem></LinkContainer>
+        <Nav bsStyle="tabs">
+          <LinkContainer to="/feed/checklist"><NavItem>Checklist</NavItem></LinkContainer>
+          <LinkContainer to="/feed/weight"><NavItem>Weight Log</NavItem></LinkContainer>
+          <LinkContainer to="/feed/meal"><NavItem>Meal Log</NavItem></LinkContainer>
+          <LinkContainer to="/feed/macro"><NavItem>Macro Log</NavItem></LinkContainer>
         </Nav>
         
         { this.props.children }
