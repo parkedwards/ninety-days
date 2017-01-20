@@ -28,12 +28,15 @@ class FeedChecklist extends Component {
         </DropdownButton>
 
         <Fade in={this.state.weight}>
-          <div>Weight input!</div>
-        </Fade>  
+          <div>
+            Weight input!
+            <input type="text"></input>
+          </div>
+        </Fade>
 
         <Fade in={this.state.meal}>
           <div>Meal input!</div>
-        </Fade>  
+        </Fade>
 
       </div>
     );
