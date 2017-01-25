@@ -14,12 +14,10 @@ const userCtrl = {
       INSERT INTO users (email, password, first_name, last_name)
       VALUES (${email}, ${password}, ${first_name}, ${last_name})
     `, (err, result) => {
-
-        if (err) console.error(err);
-        else console.log('user created');
-      });
-  }, 
-
+      if (err) console.error(err);
+      else console.log('user created');
+    });
+  },
   loginUser: (req, res) => {
     const { email } = req.body;
 
@@ -29,7 +27,7 @@ const userCtrl = {
         return res.status(400).end();
       }
 
-      // if no users found      
+      // if no users found
       if (!user.rows[0]) return res.status(401).end();
 
       const password = user.rows[0].password;
@@ -41,7 +39,7 @@ const userCtrl = {
       // if passwords don't match
       return res.status(401).end();
     });
-  }
-}
+  },
+};
 
 module.exports = userCtrl;
