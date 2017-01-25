@@ -1,7 +1,7 @@
 const db = require('../db/database');
 
 db.query(`
-  create table if not exists "users" (
+  CREATE TABLE IF NOT EXISTS "users" (
     _id serial primary key,
     email varchar(256) unique not null,
     password varchar(256) not null,
