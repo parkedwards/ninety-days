@@ -7,7 +7,12 @@ const logger = require('../logs/logger');
 const userCtrl = {
 
   createUser: (req, res) => {
-    const { email, password, first_name, last_name } = req.body;
+    const {
+      email,
+      password,
+      first_name,
+      last_name,
+    } = req.body;
 
     db.query(`
       INSERT INTO users (email, password, first_name, last_name)
