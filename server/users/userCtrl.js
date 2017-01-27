@@ -12,11 +12,12 @@ const userCtrl = {
       password,
       first_name,
       last_name,
+      email,
     } = req.body;
 
     db.query(`
-      INSERT INTO users (username, password, first_name, last_name)
-      VALUES (${username}, ${password}, ${first_name}, ${last_name})
+      INSERT INTO users (username, password, first_name, last_name, email)
+      VALUES (${username}, ${password}, ${first_name}, ${last_name}, ${email})
     `, (err) => {
       if (err) {
         logger.error(err);
