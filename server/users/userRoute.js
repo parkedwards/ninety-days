@@ -1,7 +1,18 @@
 const express = require('express');
-const userCtrl = require('./userCtrl');
+const {
+  createUser,
+  loginUser,
+  getUserById,
+  deleteUser,
+} = require('./userCtrl');
+
 
 const userRoute = module.exports = express.Router();
 
-userRoute.post('/', userCtrl.createUser);
-userRoute.post('/login', userCtrl.loginUser);
+
+userRoute.post('/', createUser);
+userRoute.post('/login', loginUser);
+
+userRoute.get('/:user_id', getUserById);
+
+userRoute.delete('/:user_id', deleteUser);
