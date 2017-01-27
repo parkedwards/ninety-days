@@ -2,6 +2,8 @@
 /config
 bundle.js
 npm-debug.log
+debug.log
+exceptions.log
 .DS_Store
 
 # IntelliJ
