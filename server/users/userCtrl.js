@@ -13,8 +13,12 @@ const userCtrl = {
       INSERT INTO users (email, password, first_name, last_name)
       VALUES (${email}, ${password}, ${first_name}, ${last_name})
     `, (err) => {
-      if (err) logger.error(err);
-      else console.log('user created');
+      if (err) {
+        logger.error(err);
+        return res.status(400).end();
+      }
+      req.session.key = email; // something YM did for user sessions
+      return res.status(201).end();
     });
   },
 
