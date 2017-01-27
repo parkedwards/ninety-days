@@ -46,9 +46,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/*---------------------------------------------------*/
 
-
-
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
 
 
 .signup-form-container {
