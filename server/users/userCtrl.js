@@ -8,21 +8,21 @@ const userCtrl = {
 
   createUser: (req, res) => {
     const {
-      email,
+      username,
       password,
       first_name,
       last_name,
     } = req.body;
 
     db.query(`
-      INSERT INTO users (email, password, first_name, last_name)
-      VALUES (${email}, ${password}, ${first_name}, ${last_name})
+      INSERT INTO users (username, password, first_name, last_name)
+      VALUES (${username}, ${password}, ${first_name}, ${last_name})
     `, (err) => {
       if (err) {
         logger.error(err);
         return res.status(400).end();
       }
-      req.session.key = email; // something YM did for user sessions
+      req.session.key = username; // something YM did for user sessions
       return res.status(201).end();
     });
   },
@@ -49,9 +49,9 @@ const userCtrl = {
   },
 
   loginUser: (req, res) => {
-    const { email } = req.body;
+    const { username } = req.body;
 
-    db.query(`SELECT password FROM users WHERE email=${email} LIMIT 1`, (err, user) => {
+    db.query(`SELECT password FROM users WHERE username=${username} LIMIT 1`, (err, user) => {
       if (err) {
         logger.error(err);
         return res.status(400).end();
