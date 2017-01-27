@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 
 class Start extends Component {
   
-  onClick() {
+  onSignInClick() {
     browserHistory.push('login')
   }
 
   render() {
     return (
       <div>
-        <Jumbotron>
-          <h1>Welcome to 90-D!</h1>
+          <h1>IFFY</h1>
           <p>An app to get your fitness on track</p>
-          <p><Button bsStyle="success" onClick={this.onClick}>Get Started</Button></p>
-        </Jumbotron>
+          
+          
+          
+          <p>Already have an account?</p>
+          <p><Button bsStyle="success" onClick={this.onSignInClick}>Sign In</Button></p>
+
       </div>
     );
   }

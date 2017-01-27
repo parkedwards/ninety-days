@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 
 // import your react components here
 import App from './components/app';
-import Start from './components/start';
+import Start from './containers/start';
 import Login from './components/login';
 import FeedIndex from './containers/feed_index';
 import FeedChecklist from './components/feed_checklist';
