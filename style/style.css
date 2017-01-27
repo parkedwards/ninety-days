@@ -46,3 +46,25 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+
+
+
+.signup-form-container {
+  width: 350px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-forms {
+  width: 270px;
+  height: 35px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #262626;
+  flex-grow: 1;
+}
