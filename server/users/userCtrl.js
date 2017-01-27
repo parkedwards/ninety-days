@@ -22,6 +22,27 @@ const userCtrl = {
     });
   },
 
+  deleteUser: (req, res) => {
+    db.query(`DELETE FROM users WHERE _id=${req.params.user_id}`, (err) => {
+      if (err) {
+        logger.error(err);
+        return res.status(400).end();
+      }
+
+      return res.status(204).end();
+    });
+  },
+
+  getUserById: (req, res) => {
+    db.query(`SELECT * FROM users WHERE _id=${req.params.user_id} LIMIT 1`, (err, users) => {
+      if (err) {
+        logger.error(err);
+        return res.status(400).end();
+      }
+      return res.status(200).send(users.rows);
+    });
+  },
+
   loginUser: (req, res) => {
     const { email } = req.body;
 
