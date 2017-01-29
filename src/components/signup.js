@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
 
 import { createUser } from '../actions/index';
 
@@ -23,13 +24,15 @@ class SignUp extends Component {
 
     console.log({ username, password, first_name, last_name, email });
 
-    createUser({ 
+    createUser({
       username,
       password,
       first_name,
       last_name,
       email,
-    })
+    }).then(() => {
+      browserHistory.push('feed')
+    });
   }
 
   render() {
