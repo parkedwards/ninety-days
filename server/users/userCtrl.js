@@ -8,13 +8,6 @@ const userCtrl = {
 
   createUser: (req, res) => {
     const user = req.body;
-    // const {
-    //   username,
-    //   password,
-    //   first_name,
-    //   last_name,
-    //   email,
-    // } = req.body;
 
     db.query('insert into users (_id, username, password, first_name, last_name, email) values (default, $1, $2, $3, $4, $5)', [user.username, user.password, user.first_name, user.last_name, user.email], (err) => {
       if (err) {
@@ -24,17 +17,6 @@ const userCtrl = {
       // req.session.key = user.username; // something YM did for user sessions
       return res.status(201).end();
     });
-    // db.query(`
-    //   INSERT INTO users (username, password, first_name, last_name, email)
-    //   VALUES (${user.username}, ${user.password}, ${user.first_name}, ${user.last_name}, ${user.email})
-    // `, (err) => {
-    //   if (err) {
-    //     logger.error(err);
-    //     return res.status(400).end();
-    //   }
-    //   req.session.key = username; // something YM did for user sessions
-    //   return res.status(201).end();
-    // });
   },
 
   deleteUser: (req, res) => {
