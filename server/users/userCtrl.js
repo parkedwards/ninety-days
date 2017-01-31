@@ -21,7 +21,7 @@ const userCtrl = {
         logger.error(err);
         return res.status(400).end();
       }
-      req.session.key = user.username; // something YM did for user sessions
+      // req.session.key = user.username; // something YM did for user sessions
       return res.status(201).end();
     });
     // db.query(`
