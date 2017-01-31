@@ -13,7 +13,7 @@ import { createUser } from '../actions/index';
 class SignUp extends Component {
   onSubmitClick(e) {
     e.preventDefault();
-    
+
     const fieldResults = e.target.elements;
 
     const username = fieldResults[0].value;
@@ -22,23 +22,22 @@ class SignUp extends Component {
     const last_name = fieldResults[3].value;
     const email = fieldResults[4].value;
 
-    console.log({ username, password, first_name, last_name, email });
-
-    createUser({
+    // console.log(this.props);    
+    console.log(this.props.createUser({
       username,
       password,
       first_name,
       last_name,
       email,
-    }).then(() => {
-      browserHistory.push('feed')
-    });
+    }));
+      // .then(() => { console.log('heyo!'); })
+      // .catch(() => { console.log('no way!'); })
   }
 
   render() {
     return (
       <div className="signup-form-container">
-        <form onSubmit={this.onSubmitClick}>
+        <form onSubmit={this.onSubmitClick.bind(this)}>
           <input type="text" className="signup-forms" placeholder="Username"></input>
           <input type="password" className="signup-forms" placeholder="Password"></input>
           <input type="text" className="signup-forms" placeholder="First Name"></input>

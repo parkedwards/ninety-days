@@ -11,5 +11,9 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-  // Switch Cases here - based on action.type
+  switch (action.type) {
+    default:
+      return state;
+  }
 };
+
