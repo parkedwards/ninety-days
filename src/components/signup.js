@@ -22,16 +22,14 @@ class SignUp extends Component {
     const last_name = fieldResults[3].value;
     const email = fieldResults[4].value;
 
-    // console.log(this.props);    
-    console.log(this.props.createUser({
+    this.props.createUser({
       username,
       password,
       first_name,
       last_name,
       email,
-    }));
-      // .then(() => { console.log('heyo!'); })
-      // .catch(() => { console.log('no way!'); })
+    })
+      .then(() => { browserHistory.push('feed') })
   }
 
   render() {
