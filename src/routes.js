@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 // import your react components here
-import App from './components/app';
+import App from './components/App';
 import Start from './containers/start';
 import Login from './components/login';
 import FeedIndex from './containers/feed_index';
